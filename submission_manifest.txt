@@ -1,0 +1,81 @@
+================================================================================
+HACKERRANK ORCHESTRATE (OCTOBER 2026) — SUBMISSION RELEASE MANIFEST
+================================================================================
+Challenge: Ghost Data Still Exists
+Verification Date: 2026-10-25T16:46:00Z
+Release Status: READY FOR MANUAL SUBMISSION (All Mandatory Checks Passed)
+Execution Engine: Python 3.11 Standard Library (Zero External Dependencies)
+
+--------------------------------------------------------------------------------
+1. PRIMARY DELIVERABLES SUMMARY
+--------------------------------------------------------------------------------
+
+1. Code Submission Archive:
+   - Filenames: code.zip / code_submission.zip
+   - Layout: README.md at root, code/ directory containing modules, tests, evaluation
+   - Byte Size: 97,181 bytes (95 KB)
+   - SHA-256: e2c5e8ad89a27568bb4058922d85569f9c9f48ed1df3d62f10ed3961a3abe3ae
+   - Archive Integrity: Verified (unzip -t: 0 errors detected)
+   - Exclusions: dataset/, data/, virtualenvs, caches, binaries, secrets, git
+
+2. Prediction CSV:
+   - Filename: output.csv
+   - Byte Size: 581,508 bytes (568 KB)
+   - Row Count: 519 lines (1 header + 518 data rows: case_33 to case_550)
+   - SHA-256: 972e9ae2d1b9a4dcbbbd2c14274d5f431666931f95819208f552790ca6e3adcd
+   - Schema: case_id,deletion_status,steps_json
+   - Validation: 100% compliant across 518 cases and 2,892 canonical steps (0 errors)
+
+3. Session Chat Transcript:
+   - Filename: log.txt
+   - Specification: AGENTS.md compliant turn-by-turn log
+   - Target Upload Slot: chat_transcript
+   - SHA-256: 642954d8be70ef7c1d23b8c26d9fc0befce37afae72e9de1ed6efc07903ca622
+
+--------------------------------------------------------------------------------
+2. QUALITY & EVALUATION METRICS
+--------------------------------------------------------------------------------
+
+Automated Test Suite:
+   - Command: python3 -m unittest discover -s code/tests -v
+   - Tests Executed: 131 tests across 8 test suites
+   - Results: 131 passed, 0 failures, 0 errors (100.0% pass rate)
+   - Wall Time: 1.53 seconds
+
+Sample Benchmark (dataset/sample_deletion_requests.csv):
+   - Command: python3 code/evaluation/main.py --sample
+   - Requests Evaluated: 32 / 32
+   - Status Agreement: 32 / 32 (100.0%)
+   - Exact steps_json Matches: 30 / 32 (93.75%)
+   - Full Prediction Matches: 30 / 32 (93.75%)
+   - Schema Validation Failures: 0
+   - Pipeline Exceptions: 0
+   - Latency: 0.17 seconds (5.21 ms/case)
+
+Full Dataset Production Execution (dataset/deletion_requests.csv):
+   - Total Evaluated Requests: 518
+   - Status Distribution:
+     * INCOMPLETE: 287 (55.41%)
+     * COMPLETE: 221 (42.66%)
+     * NOT_APPLICABLE: 10 (1.93%)
+   - Total Planned Steps: 2,892 canonical steps (mean 5.58 steps/case)
+   - Wall Time: 2.88 seconds (5.56 ms/case)
+
+--------------------------------------------------------------------------------
+3. UNRESOLVED REFERENCE DISCREPANCY DOCUMENTATION
+--------------------------------------------------------------------------------
+- Case ID case_18 (13 vs 14 steps): References audit_record_6645 in sample_output.csv.
+- Case ID case_20 (7 vs 8 steps): References audit_record_5569 in sample_output.csv.
+- Root Cause: Exhaustive scans confirm neither audit_record_6645 nor audit_record_5569
+  exists in any supplied file in dataset/ (SQL, JSON, CSV, or text logs).
+- Adherence: Per competition rules, the engine refuses to hallucinate ungrounded
+  records or apply case-specific overrides.
+
+--------------------------------------------------------------------------------
+4. MANUAL HACKERRANK UPLOAD INSTRUCTIONS
+--------------------------------------------------------------------------------
+On the HackerRank challenge submission interface:
+1. Code zip: Upload 'code.zip' (or 'code_submission.zip').
+2. Predictions CSV: Upload 'output.csv'.
+3. Chat transcript: Upload 'log.txt'.
+================================================================================

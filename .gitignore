@@ -1,0 +1,26 @@
+# Python caches and environments
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+
+# Build and test artifacts
+build/
+dist/
+.coverage
+htmlcov/
+.DS_Store
+
+# Challenge data - do not upload
+/dataset/
+/data/
+
+# Submission packaging artifacts
+/code.zip
+/code_submission.zip
+/submission_staging/
+
+# Secrets
+.env
+.env.*
+!.env.example
